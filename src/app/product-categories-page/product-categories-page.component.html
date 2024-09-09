@@ -1,0 +1,9 @@
+<h2 style="text-align: center;">Explore our Stylish Categories</h2>
+<div class="categories-container">
+  <div *ngFor="let category of categories" class="category-tab" (click)="selectCategory(category.categoryID)">
+    <h3>{{ category.categoryDescription }}</h3>
+  </div>
+</div>
+
+<!-- Passing selected category to product-item-page component -->
+<app-product-item-page [selectedCategoryId]="selectedCategoryId"></app-product-item-page>

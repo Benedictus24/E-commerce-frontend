@@ -1,0 +1,43 @@
+<div class="register-page">
+  <div class="register-container">
+    <div class="register-box">
+      <h2>Welcome!</h2>
+      <p>Create your account</p>
+      
+      <form class="register-form" (ngSubmit)="onSubmit()">
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="First Name" required [(ngModel)]="name" name="name">
+        </div>
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Surname" required [(ngModel)]="surname" name="surname">
+        </div>
+        <div class="input-group">
+          <i class="fas fa-home"></i>
+          <input type="text" placeholder="Address" required [(ngModel)]="address" name="address">
+        </div>
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" placeholder="Email" required [(ngModel)]="email" name="email">
+        </div>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input [type]="showPassword ? 'text' : 'password'" placeholder="Password" required [(ngModel)]="password" name="password">
+          <button type="button" class="show-password-btn" (click)="togglePassword()">
+            {{ showPassword ? 'Hide' : 'Show' }}
+          </button>
+        </div>
+        
+        <button type="submit" class="register-btn">Register</button>
+      </form>
+      <p *ngIf="errorMessage" class="error-message">{{errorMessage}}</p>
+
+      <div class="bottom-text">
+        <p>Already have an account?
+          <a routerLink="/login">Login Here</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

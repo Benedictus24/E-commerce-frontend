@@ -1,0 +1,28 @@
+<div class="product-items-container">
+    <div *ngFor="let product of productItems" class="product-card">
+      <div class="image-container">
+        <img [src]="'data:image/png;base64,' + product.imageUrl" alt="{{product.description}}" class="product-image" />
+      </div>
+      <div class="product-details">
+        <h3>{{ product.description }}</h3>
+        <p class="price">R{{ product.price.toFixed(2) }}</p>
+        
+        <p *ngIf="product.quantity < 1" class="out-of-stock">Out of stock</p>
+        <p *ngIf="product.quantity > 0" class="quantity">In stock: {{ product.quantity }}</p>
+        
+        
+        <div *ngIf="product.quantity > 0" class="quantity-selector">
+          <button (click)="decrementQuantity(product.productId)" [disabled]="quantitySelections[product.productId] <= 1">-</button>
+          <input type="number" [(ngModel)]="quantitySelections[product.productId]" min="1" [max]="product.quantity" />
+          <button (click)="incrementQuantity(product.productId)" [disabled]="quantitySelections[product.productId] >= product.quantity">+</button>
+        </div>
+
+
+
+        <button class="order-button" (click)="addToCart(product)" [disabled]="quantitySelections[product.productId] > product.quantity || product.quantity === 0">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="loading" class="loading">Loading...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+  <div *ngIf="!loading && !error && productItems.length === 0" class="no-products">No products found for this category.</div>

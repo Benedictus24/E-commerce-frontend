@@ -1,0 +1,36 @@
+<div class="login-page">
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Welcome Back!</h2>
+      <p>Please login to your account</p>
+      
+      <form class="login-form" (ngSubmit)="onSubmit()">
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" placeholder="Email" required [(ngModel)]="email" name="email">
+        </div>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input [type]="showPassword ? 'text' : 'password'" placeholder="Password" required [(ngModel)]="password" name="password">
+          <button type="button" class="show-password-btn" (click)="togglePassword()"> 
+            {{ showPassword ? 'Hide' : 'Show' }}
+          </button>
+        </div>
+        
+        <button type="submit" class="login-btn">Login</button>
+      </form>
+      <p *ngIf="errorMessage" class="error-message">{{errorMessage}}</p>
+
+      <div class="bottom-text">
+        <p>Don't have an account? 
+          <a routerLink="/register">Register Here</a>
+        </p>
+        <!-- <div class="bottom-text">
+          <p>Forgot your password? 
+            <a routerLink="/resetPassword">Reset Password Here</a>
+          </p>
+        
+      </div> -->
+    </div>
+  </div>
+</div>

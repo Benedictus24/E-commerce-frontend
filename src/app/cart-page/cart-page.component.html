@@ -1,0 +1,31 @@
+<div class="cart-container">
+    <h2>Your Cart</h2>
+   
+    <div *ngIf="cartItems.length === 0" class="empty-cart">
+      <p>Your cart is empty.</p>
+    </div>
+ 
+    <div *ngIf="cartItems.length > 0" class="cart-content">
+      <ul class="cart-items">
+        <li *ngFor="let item of cartItems" class="cart-item">
+          <span class="item-description">{{ item.description }}</span>
+          <span class="item-quantity">
+            Quantity:
+            <button (click)="decreaseQuantity(item.productId)" [disabled]="item.quantity <= 1">-</button>
+            {{ item.quantity }}
+            <button (click)="increaseQuantity(item.productId)">+</button>
+          </span>
+          <span class="item-price">Price: {{ item.price | currency:'ZAR':'symbol-narrow':'1.2-2' }}</span>
+          <button (click)="removeItem(item.productId)" class="remove-btn">Remove</button>
+        </li>
+      </ul>
+ 
+      <div class="cart-summary">
+        <p class="total"><strong>Total: {{ calculateTotal() | currency:'ZAR':'symbol-narrow':'1.2-2' }}</strong></p>
+        <div class="action-buttons">
+          <button (click)="clearCart()" class="clear-btn">Clear Cart</button>
+          <button (click)="checkout()" class="checkout-btn">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>

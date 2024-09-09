@@ -1,0 +1,223 @@
+.product-items-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 24px;
+    background-color: #f5f5f5;
+  }
+  
+  .product-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .image-container {
+    height: 160px;
+    overflow: hidden;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover .product-image {
+    transform: scale(1.05);
+  }
+  
+  .product-details {
+    padding: 16px;
+  }
+  
+  h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #131615;
+    margin: 0 0 8px;
+  }
+  
+  .quantity {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 16px;
+  }
+
+  .out-of-stock {
+    color: red;
+    font-weight: bold;
+  }
+  
+  
+  .order-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .order-button:hover {
+    background-color: #45a049;
+  }
+  
+  .loading, .error, .no-products {
+    text-align: center;
+    padding: 24px;
+    font-size: 18px;
+    color: #666;
+  }
+  /* Product items container and cards remain as is */
+.product-items-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 24px;
+    background-color: #f5f5f5;
+  }
+  
+  .product-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .image-container {
+    height: 160px;
+    overflow: hidden;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover .product-image {
+    transform: scale(1.05);
+  }
+  
+  .product-details {
+    padding: 16px;
+  }
+  
+  h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #131615;
+    margin: 0 0 8px;
+  }
+  
+  .quantity {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 16px;
+  }
+  
+  /* Update the out-of-stock message */
+  .out-of-stock {
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 10px 0;
+    text-transform: uppercase;
+    padding-bottom: 50px; }
+  
+  /* Update quantity selector buttons */
+  .quantity-selector {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .quantity-selector button {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 40px;
+  }
+  
+  .quantity-selector button:hover {
+    background-color: #ddd;
+  }
+  
+  .quantity-selector button:disabled {
+    background-color: #eee;
+    cursor: not-allowed;
+  }
+  
+  .quantity-selector input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 10px;
+    font-size: 16px;
+  }
+  
+  /* Order button styles */
+  .order-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .order-button:hover {
+    background-color: #45a049;
+  }
+  
+  .loading, .error, .no-products {
+    text-align: center;
+    padding: 24px;
+    font-size: 18px;
+    color: #666;
+  }
+  
+  .error {
+    color: #e44d26;
+  }
+  
+  
